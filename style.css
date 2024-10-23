@@ -16,6 +16,9 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1em;
+  background-color: aquamarine;
+  padding: 40px;
+  border-radius: 10px;
 }
 
 #altura {

@@ -1,14 +1,17 @@
 function calcular() {
-  let altura = document.getElementById("altura").value;
+  let altura = document.getElementById("altura").value.replace(",", ".");
   let peso = document.getElementById("peso").value;
 
-  let peso2 = parseFloat(peso);
   let altura2 = parseFloat(altura);
+  let peso2 = parseFloat(peso);
 
-  let resultado = Number(peso2 / (altura2 * altura2));
+  let resultado = Number( peso2/(altura2 * altura2))
+
   let result = resultado.toFixed(2);
 
   let element = document.getElementById("resultado");
+
+
 
   if (result < 18.5) {
     element.innerHTML = `Seu IMC é de ${result} e está abaixo do peso`;
@@ -28,12 +31,14 @@ function calcular() {
   }
 }
 
-function formatarAltura(valor) {
-  valor = valor.replace(/[^0-9]/g, "");
-  return valor.length > 1 ? valor[0] + "," + valor.slice(1, 3) : valor;
+
+
+const formatarAltura = (valor) => {
+  valor = valor.replace(/[^0-9]/g, "")
+  return valor.length > 1 ? valor[0] + "," + valor.slice(1, 3) : valor
 }
 
-function formatarPeso(valor) {
+const formatarPeso = (valor) => {
   valor = valor.replace(/[^0-9]/g, "");
-  return valor;
-}
+  return valor.slice(0, -2) + "," + valor.slice(-2);
+};
