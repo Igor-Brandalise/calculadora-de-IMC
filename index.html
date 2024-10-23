@@ -9,16 +9,17 @@
 <body>
 
     <main>
-        <input type="number" name="" id="altura" value="altura">
+        <input type="text" id="altura" placeholder="Digite sua altura" oninput="this.value = formatarAltura(this.value)" >
 
-        <input type="number" name="" id="peso" value="peso">
+        <input type="text" id="peso" placeholder="Digite seu peso" oninput="this.value = formatar(this.value)">
 
-        <input type="button" value="Calcular" id="botao" onclick="calcular()">
+        <button id="botao" onclick="calcular()">Calcular</button>
+        
 
         <section>
            
             <p id="resultado"></p>
-            
+
         </section>
     </main>
     
